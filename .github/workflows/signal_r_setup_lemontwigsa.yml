@@ -23,8 +23,18 @@ jobs:
         with:
           dotnet-version: '9.x'
 
+
+      # - name: Restore dependencies
+      #   run: dotnet restore src/YourProject.sln
+
       - name: Print repository structure
-        run: dir /s
+        run: dir 
+
+
+      - name: Debug repository structure
+        run: Get-ChildItem -Recurse
+        shell: pwsh
+
 
       - name: Build with dotnet
         run: dotnet build ../src/IdeaPilot.Rest/IdeaPilot.Rest.sln --configuration Release
