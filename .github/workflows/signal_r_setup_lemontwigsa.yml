@@ -23,6 +23,9 @@ jobs:
         with:
           dotnet-version: '9.x'
 
+      - name: Print repository structure
+        run: dir /s
+
       - name: Build with dotnet
         run: dotnet build ../src/IdeaPilot.Rest/IdeaPilot.Rest.sln --configuration Release
 
